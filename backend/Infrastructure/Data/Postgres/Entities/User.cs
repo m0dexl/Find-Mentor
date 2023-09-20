@@ -10,10 +10,14 @@ public class User : Entity<int>
     public byte[] PasswordSalt { get; set; } = default!;
     public byte[] PasswordHash { get; set; } = default!;
     public UserType UserType { get; set; }
+
+    public int phonenumber { get; set; } = default!;
+
 }
 
 public enum UserType
 {
     Admin,
     User,
+    Mentor,
 }
