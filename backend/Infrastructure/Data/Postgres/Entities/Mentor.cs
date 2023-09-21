@@ -8,25 +8,13 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Mentor : Entity<int>
     {
-        [Required]
-        public int mentorId { get; set; }
+        public int Mentor_Id { get; set; }
 
-        public string name { get; set; }
+        //public string Category_Id { get; set; }
 
-        public string lastname { get; set; }
+        public bool isValid { get; set; } = true;
+        //public Categories Categories { get; set; } = default!;
 
-        public string mail { get; set; }
-
-        public string password { get; set; }
-
-        public int phonenumber { get; set; }
-
-        [Required]
-        public int categoryId { get; set; }
-
-        [Required]
-        public int degreeId { get; set; }
-
-        public bool IsActive { get; set; }
+        public ICollection<MentorCategory> MentorCategories { get; set; }
     }
 }

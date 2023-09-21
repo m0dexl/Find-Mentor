@@ -9,15 +9,12 @@ public class User : Entity<int>
     public string FullName { get; set; } = default!;
     public byte[] PasswordSalt { get; set; } = default!;
     public byte[] PasswordHash { get; set; } = default!;
-    public UserType UserType { get; set; }
-
-    public int phonenumber { get; set; } = default!;
+    public UserType UserType { get; set; } = UserType.Mentor;
 
 }
 
 public enum UserType
 {
     Admin,
-    User,
-    Mentor,
+    Mentor
 }

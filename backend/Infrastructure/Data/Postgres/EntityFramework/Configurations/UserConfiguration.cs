@@ -18,7 +18,5 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.PasswordSalt).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.IsDeleted).IsRequired();
-        builder.Property(x => x.phonenumber).IsRequired();
-        builder.HasIndex(x => x.phonenumber).IsUnique();
     }
 }

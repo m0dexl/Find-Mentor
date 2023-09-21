@@ -1,30 +1,28 @@
-﻿using System;
+﻿using Infrastructure.Data.Postgres.Entities;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Infrastructure.Data.Postgres.Entities;
-using Infrastructure.Data.Postgres.EntityFramework.Configurations.Base;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 {
-    public class MentorConfiguration: BaseConfiguration<Mentor, int>
+    public class CategoriesConfiguration : IEntityTypeConfiguration<Categories>
     {
-        public override void Configure(EntityTypeBuilder<Mentor> builder)
+        public void Configure(EntityTypeBuilder<Categories> builder)
         {
-            base.Configure(builder); // Base configuration from the abstract class
+            //builder.HasKey(x => x.Mentor_Id);
+            //builder.Property(x => x.Category_Id).IsRequired();
+            //builder.Property(x => x.isValid).IsRequired();
 
-            builder.HasKey(x => x.Mentor_Id);
-            builder.Property(x => x.Category_Id).IsRequired();
-            builder.Property(x => x.Categories).IsRequired();
-            builder.Property(x => x.isValid).IsRequired();
+            //builder.HasOne(x => x.Category_Id).WithMany( m => m.)
 
-            //builder.HasMany(c => c.Categories)
-            //    .WithOne(c => c.Mentor)
-            //    .HasForeignKey(c => c.Mentor_id);
-
+            builder.HasKey(x => x.Category_Id);
+            builder.Property(x => x.Category_Name).IsRequired();
+            builder.Property(x => x.Category_Description).IsRequired();
+            builder.Property(x => x.Category_Photo).IsRequired();
 
             //builder.HasKey(x => x.mentorId);
             //builder.Property(x => x.mail).IsRequired();
