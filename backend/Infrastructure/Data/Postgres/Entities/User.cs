@@ -11,13 +11,15 @@ public class User : Entity<int>
     public byte[] PasswordHash { get; set; } = default!;
     public UserType UserType { get; set; }
 
-    public int phonenumber { get; set; } = default!;
+    //public int phonenumber { get; set; } = default!;
+
+    //public int Mentor_Id { get; set; }
+    //public Mentor Mentor { get; set; }
 
 }
 
 public enum UserType
 {
     Admin,
-    User,
     Mentor,
 }
