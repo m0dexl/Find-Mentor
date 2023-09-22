@@ -18,5 +18,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.PasswordSalt).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.IsDeleted).IsRequired();
+
+        builder.HasOne(x => x.Mentor).WithOne(x => x.User).HasForeignKey<User>(x => x.Mentor_Id);
+
     }
 }

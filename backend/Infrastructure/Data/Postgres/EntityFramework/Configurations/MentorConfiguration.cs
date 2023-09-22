@@ -17,13 +17,18 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder); // Base configuration from the abstract class
 
             builder.HasKey(x => x.Mentor_Id);
-            builder.Property(x => x.Category_Id).IsRequired();
-            builder.Property(x => x.Categories).IsRequired();
-            builder.Property(x => x.isValid).IsRequired();
+
+            builder.HasOne(x=>x.User).WithOne(x => x.Mentor).HasForeignKey<Mentor>(x => x.User_Id);
+
+
+            //builder.HasKey(x => x.Mentor_Id);
+            //builder.Property(x => x.Category_Id).IsRequired();
+            //builder.Property(x => x.isValid).IsRequired();
 
             //builder.HasMany(c => c.Categories)
             //    .WithOne(c => c.Mentor)
             //    .HasForeignKey(c => c.Mentor_id);
+
 
 
             //builder.HasKey(x => x.mentorId);

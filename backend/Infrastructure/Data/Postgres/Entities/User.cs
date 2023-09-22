@@ -13,8 +13,9 @@ public class User : Entity<int>
 
     //public int phonenumber { get; set; } = default!;
 
-    //public int Mentor_Id { get; set; }
-    //public Mentor Mentor { get; set; }
+    public int Mentor_Id { get; set; }
+    public Mentor Mentor { get; set; }
+
 
 }
 
