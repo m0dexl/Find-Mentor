@@ -12,6 +12,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public int Question_Id {  get; set; }
         public string Question_Text { get; set; }
 
-        public virtual ICollection<Form> Forms { get; set; }
+        //public virtual ICollection<Form> Forms { get; set; }
+        public Form Form { get; set; }
     }
 }
