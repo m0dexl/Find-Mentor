@@ -10,12 +10,18 @@ namespace Infrastructure.Data.Postgres.Entities
     public class Categories : Entity<int>
     {
         public int Category_Id { get; set; }
+
+        public string Category_Name { get; set; }
         public string Category_Description { get; set;}
         public string Category_Photo { get; set; }
 
         public ICollection<MentorCategory> MentorCategory { get; set; }
-        public Mentor Mentor { get; set; }
+        public virtual ICollection<Mentor> Mentor { get; set; }
+        public virtual ICollection<Form> Forms { get; set; }
+
+        
+    
     }
 }
 
-// kategoriler default olarak dbde bulunack. Admin kategori ekleyip çıkartma işlemleri yapamayacak.
+

@@ -12,6 +12,6 @@ namespace Infrastructure.Data.Postgres.Entities
         public Mentor Mentor { get; set; }
 
         public int Category_Id { get; set; }
-        public Categories Categories { get; set; }
+        public virtual Categories Categories { get; set; }
     }
 }
