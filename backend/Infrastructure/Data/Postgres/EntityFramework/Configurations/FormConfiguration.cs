@@ -16,6 +16,10 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
 
             builder.Property(x => x.Form_Id).IsRequired();
+
+            builder.HasOne(f => f.Mentor)
+           .WithMany(m => m.Forms)
+           .HasForeignKey(f => f.Id);
         }
 
     }

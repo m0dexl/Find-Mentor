@@ -26,7 +26,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public bool isAvailable { get; set; } = true;
 
         public virtual ICollection<MentorCategory> MentorCategories { get; set; }
-        public virtual ICollection<Form> Forms { get; set; }
+        public ICollection<Form> Forms { get; set; } = new List<Form>();
         //referanslar
 
     }
