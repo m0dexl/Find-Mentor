@@ -21,7 +21,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                 .WithMany(f => f.QuestionsV)
                 .HasForeignKey(fq => fq.Id); //form_id gelmiyor
 
-            //sadas
+            
             builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Question_Id);
 
 
