@@ -16,7 +16,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
         {
             base.Configure(builder); // Base configuration from the abstract class
 
-            builder.HasKey(x => x.Mentor_Id);
+            builder.HasKey(x => x.Id);
 
             builder.HasOne(x=>x.User).WithOne(x => x.Mentor).HasForeignKey<Mentor>(x => x.User_Id);
 

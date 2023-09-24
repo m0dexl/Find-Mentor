@@ -9,7 +9,7 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Questions: Entity<int>
     {
-        public int Question_Id {  get; set; }
+        public int Form_Id {  get; set; }
         public string Question_Text { get; set; }
 
         //public virtual ICollection<Form> Forms { get; set; }

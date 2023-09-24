@@ -21,5 +21,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.HasOne(x => x.Mentor).WithOne(x => x.User).HasForeignKey<User>(x => x.Mentor_Id);
 
+
+
+        //Dapper
     }
 }

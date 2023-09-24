@@ -15,14 +15,14 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
         public override void Configure(EntityTypeBuilder<Questions> builder)
         {
             base.Configure(builder);
-            builder.HasKey(fq => new { fq.Id, fq.Question_Id }); //form_id gelmiyor
+            builder.HasKey(fq => new { fq.Id }); 
 
             builder.HasOne(fq => fq.Form)
-                .WithMany(f => f.QuestionsV)
-                .HasForeignKey(fq => fq.Id); //form_id gelmiyor
+                .WithMany(f => f.QuestionsLıst)
+                .HasForeignKey(fq => fq.Form_Id); 
 
             
-            builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Question_Id);
+            //builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Id);
 
 
         }

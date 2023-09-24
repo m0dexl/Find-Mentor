@@ -9,7 +9,7 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Mentor : Entity<int>
     {
-        public int Mentor_Id { get; set; }
+        //public int Mentor_Id { get; set; }
 
         //public string Category_Id { get; set; }
 
