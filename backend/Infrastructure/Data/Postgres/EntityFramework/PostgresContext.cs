@@ -20,11 +20,14 @@ public class PostgresContext : DbContext
         
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new UserTokenConfiguration());
-        modelBuilder.ApplyConfiguration(new MentorCategoryConfiguration());
         modelBuilder.ApplyConfiguration(new FormConfiguration());
         modelBuilder.ApplyConfiguration(new QuestionConfiguration());
         modelBuilder.ApplyConfiguration(new CategoriesConfiguration());
         modelBuilder.ApplyConfiguration(new MentorConfiguration());
+        modelBuilder.ApplyConfiguration(new MentorCategoryConfiguration());
+        modelBuilder.ApplyConfiguration(new MentorFormConfiguration());
+        modelBuilder.ApplyConfiguration(new FormQuestionConfiguration());
+
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -45,5 +48,9 @@ public class PostgresContext : DbContext
 
     public DbSet<Categories> Categories => Set<Categories>();   
     public DbSet<Questions> Questions => Set<Questions>();
+
+    public DbSet<MentorCategory> MentorCategory => Set<MentorCategory>();
+    public DbSet<FormQuestion> FormQuestion => Set<FormQuestion>();
+    public DbSet<MentorForm> MentorForm => Set<MentorForm>();
  
 }
