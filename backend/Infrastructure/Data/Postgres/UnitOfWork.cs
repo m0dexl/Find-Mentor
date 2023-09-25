@@ -13,16 +13,13 @@ public class UnitOfWork : IUnitOfWork
 
     private UserRepository? _userRepository;
     private UserTokenRepository? _userTokenRepository;
-<<<<<<< HEAD
     private FormRepository? _formRepository;
     private MentorFormRepository? _mentorFormRepository;
-=======
     private CategoriesRepository? _categoriesRepository;
     private MentorCategoryRepository? _mentorCategoryRepository;
     private MentorRepository? _mentorRepository;
     private QuestionsRepository? _questionsRepository;
     private FormQuestionRepository? _formQuestionRepository;
->>>>>>> af828f05ca1298698568e7a854ad80fcc6e0219d
 
     public UnitOfWork(PostgresContext postgresContext)
     {
