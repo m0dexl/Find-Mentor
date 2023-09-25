@@ -19,7 +19,7 @@ namespace Infrastructure.Data.Postgres.Entities
         //public virtual ICollection<Questions> QuestionsLıst { get; set; } = new List<Questions>();
 >>>>>>> 2369bb8f74374f008420511d6c190d0acda2ad21
 
-        public ICollection<MentorForm> Mentorler { get; set; }
+        public ICollection<MentorForm> MentorsForForm { get; set; }
 
         public ICollection<FormQuestion> QuestionsForForms { get; set; }
         //public Questions Questions { get; set; }

@@ -10,11 +10,8 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Mentor : Entity<int> // burası normalde entity idi. userdan kalıtım aldım. 24/09
     {
-<<<<<<< HEAD
         //public int Mentor_Id { get; set; } burayı yeni değiştirdim artık userdan id aliyor. 24/09
-=======
         //public int Mentor_Id { get; set; }
->>>>>>> 2369bb8f74374f008420511d6c190d0acda2ad21
 
         //public string Category_Id { get; set; }
 
@@ -34,12 +31,12 @@ namespace Infrastructure.Data.Postgres.Entities
         //public bool isAvailable { get; set; } = true; yeni degistirdim alttaki icin. 24/09
 
         //public virtual ICollection<MentorCategory> MentorCategories { get; set; }
-        public ICollection<MentorForm> Formlar { get; set; }
+        public ICollection<MentorForm> FormsForMentor { get; set; }
 
         // yeni sildim
         //public virtual ICollection<Categories> Categories { get; set; }
 
-        public ICollection<MentorCategory> Kategoriler { get; set; }
+        public ICollection<MentorCategory> CategoriesForMentor { get; set; }
 
         //referanslar
 

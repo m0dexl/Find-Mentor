@@ -20,12 +20,12 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
 
             builder.HasOne(mc => mc.Mentor)
-                .WithMany(m => m.Kategoriler)
+                .WithMany(m => m.CategoriesForMentor)
                 .HasForeignKey(mc => mc.MentorId);
 
 
             builder.HasOne(mc => mc.Categories)
-                .WithMany(c => c.Mentorler)
+                .WithMany(c => c.MentorsForCategory)
                 .HasForeignKey(cm => cm.CategoryId);
                 
         }

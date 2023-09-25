@@ -21,11 +21,11 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
             //coktan coka iliski
             builder.HasOne(mf => mf.Mentor)
-                .WithMany(f => f.Formlar)
+                .WithMany(f => f.FormsForMentor)
                 .HasForeignKey(m => m.MentorId);
 
             builder.HasOne(mf => mf.Form)
-                .WithMany(m => m.Mentorler)
+                .WithMany(m => m.MentorsForForm)
                 .HasForeignKey(m => m.FormId);
         }
     }
