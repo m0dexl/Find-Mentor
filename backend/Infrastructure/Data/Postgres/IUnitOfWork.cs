@@ -9,5 +9,13 @@ public interface IUnitOfWork : IDisposable
     IFormRepository Forms { get; }
     IMentorFormRepository MentorForms { get; }
 
+    ICategoriesRepository Categories { get; }
+
+    IMentorCategoriesRepository MentorCategories { get; }
+
+    IFormQuestionRepository FormQuestion { get; }
+    IMentorRepository Mentor { get; }
+    IQuestionsRepository Questions { get; }
+
     Task<int> CommitAsync();
 }
