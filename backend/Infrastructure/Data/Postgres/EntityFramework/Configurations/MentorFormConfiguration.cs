@@ -14,7 +14,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
         public void Configure(EntityTypeBuilder<MentorForm> builder)
         {
             // composite primary key
-            builder.HasKey(mc => new { mc.MentorId, mc.FormId });
+            builder.HasKey(mc => mc.Id);
 
             // yeni sildim
 

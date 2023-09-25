@@ -14,7 +14,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
         public void Configure(EntityTypeBuilder<MentorCategory> builder)
         {
             // composite primary key
-            builder.HasKey(mc => new { mc.MentorId, mc.CategoryId });
+            builder.HasKey(mc => mc.Id);
 
             // yeni sildim
 
@@ -27,7 +27,8 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             builder.HasOne(mc => mc.Categories)
                 .WithMany(c => c.MentorsForCategory)
                 .HasForeignKey(cm => cm.CategoryId);
-                
+
+
         }
     }
 }

@@ -23,6 +23,10 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                 .WithOne(x => x.Mentor)
                 .HasForeignKey<Mentor>(x => x.Id);
 
+            builder.HasMany(c => c.CategoriesForMentor)
+                   .WithOne(sc => sc.Mentor)
+                   .HasForeignKey(sc => sc.MentorId);
+
             // yeni sildim
             //builder.HasMany(x => x.Categories).WithMany(x => x.Mentor).
 

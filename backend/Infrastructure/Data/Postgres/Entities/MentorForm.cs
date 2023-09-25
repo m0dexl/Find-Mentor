@@ -8,6 +8,7 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class MentorForm
     {
+        public int Id { get; set; }
         public int MentorId { get; set; }
         public Mentor Mentor { get; set; }
 

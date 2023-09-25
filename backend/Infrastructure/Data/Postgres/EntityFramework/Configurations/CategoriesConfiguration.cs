@@ -23,6 +23,11 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Category_Name).IsRequired();
             builder.Property(x => x.Category_Description).IsRequired();
+
+
+            builder.HasMany(s => s.MentorsForCategory)
+                   .WithOne(sc => sc.Categories)
+                   .HasForeignKey(sc => sc.CategoryId);
             //builder.Property(x => x.Category_Photo).IsRequired();
 
             //builder.HasKey(x => x.mentorId);

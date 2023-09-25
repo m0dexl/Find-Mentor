@@ -8,6 +8,7 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class FormQuestion
     {
+        public int Id { get; set; }
         public int FormId { get; set; }
         public Form Form { get; set; }
 

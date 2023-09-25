@@ -13,7 +13,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<FormQuestion> builder)
         {
-            builder.HasKey(fq => new {fq.FormId , fq.QuestionsId});
+            builder.HasKey(fq => fq.Id);
 
             builder.HasOne(fq => fq.Form)
                 .WithMany(q => q.QuestionsForForms)
@@ -22,6 +22,6 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             builder.HasOne(qf => qf.Questions)
                 .WithMany(f => f.FormsForQuestions)
                 .HasForeignKey(qf => qf.QuestionsId);
-        }
+                    }
     }
 }

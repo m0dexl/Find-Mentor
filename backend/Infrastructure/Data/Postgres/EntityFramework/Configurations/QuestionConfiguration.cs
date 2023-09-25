@@ -26,13 +26,17 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
             //sadas
             //builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Question_Id);
-            builder.HasKey(fq => new { fq.Id }); 
+            builder.HasKey(fq => fq.Id );
+
+            builder.HasMany(s => s.FormsForQuestions)
+               .WithOne(sc => sc.Questions)
+               .HasForeignKey(sc => sc.QuestionsId);
 
             //builder.HasOne(f => f.Form)
             //    .WithMany(f => f.QuestionsLıst)
             //    .HasForeignKey(fq => fq.Form_Id); 
 
-            
+
             //builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Id);
 
 
