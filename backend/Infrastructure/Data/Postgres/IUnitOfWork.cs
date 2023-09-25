@@ -7,5 +7,9 @@ public interface IUnitOfWork : IDisposable
     IUserRepository Users { get; }
     IUserTokenRepository UserTokens { get; }
 
+    ICategoriesRepository Categories { get; }
+
+    IMentorCategoriesRepository MentorCategories { get; }
+
     Task<int> CommitAsync();
 }

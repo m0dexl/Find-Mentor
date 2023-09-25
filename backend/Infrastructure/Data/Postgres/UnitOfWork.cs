@@ -13,6 +13,8 @@ public class UnitOfWork : IUnitOfWork
 
     private UserRepository? _userRepository;
     private UserTokenRepository? _userTokenRepository;
+    private CategoriesRepository? _categoriesRepository;
+    private MentorCategoryRepository? _mentorCategoryRepository;
 
     public UnitOfWork(PostgresContext postgresContext)
     {
@@ -21,6 +23,9 @@ public class UnitOfWork : IUnitOfWork
 
     public IUserRepository Users => _userRepository ??= new UserRepository(_postgresContext);
     public IUserTokenRepository UserTokens => _userTokenRepository ??= new UserTokenRepository(_postgresContext);
+    public ICategoriesRepository Categories => _categoriesRepository ??= new CategoriesRepository(_postgresContext);
+
+    public IMentorCategoriesRepository MentorCategories => _mentorCategoryRepository ??= new MentorCategoryRepository(_postgresContext);
 
     public async Task<int> CommitAsync()
     {
