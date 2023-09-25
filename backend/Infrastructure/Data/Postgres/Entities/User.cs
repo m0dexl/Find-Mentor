@@ -11,10 +11,12 @@ public class User : Entity<int>
     public byte[] PasswordHash { get; set; } = default!;
     public UserType UserType { get; set; } = UserType.Mentor;
 
+    public Mentor Mentor { get; set; }
+
     //public int phonenumber { get; set; } = default!;
 
-    public int Mentor_Id { get; set; }
-    public Mentor Mentor { get; set; }
+    //public int Mentor_Id { get; set; } yeni cikardim 24/09
+    //public Mentor Mentor { get; set; } yeni cikardim 24/09
 
 
 }

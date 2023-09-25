@@ -9,15 +9,16 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Form : Entity<int>
     {
-        public int Form_Id {  get; set; }
+        //public int Form_Id {  get; set; }
 
-        public int Form_Owner_Mentor_Id { get; set; }
+        //public int Form_Owner_Mentor_Id { get; set; }
 
-        public virtual ICollection<Questions> QuestionsV { get; set; } = new List<Questions>();
+        //public virtual ICollection<Questions> QuestionsV { get; set; } = new List<Questions>();
 
-        public Mentor Mentor { get; set; }
+        public ICollection<MentorForm> Mentorler { get; set; }
 
-        public Questions Questions { get; set; }
+        public ICollection<FormQuestion> QuestionsForForms { get; set; }
+        //public Questions Questions { get; set; }
         
     }
 }

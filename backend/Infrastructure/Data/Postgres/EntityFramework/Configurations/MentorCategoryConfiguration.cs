@@ -13,15 +13,21 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<MentorCategory> builder)
         {
-            builder.HasKey(mc => new { mc.Mentor_Id, mc.Category_Id });
+            // composite primary key
+            builder.HasKey(mc => new { mc.MentorId, mc.CategoryId });
+
+            // yeni sildim
+
 
             builder.HasOne(mc => mc.Mentor)
-                .WithMany(m => m.MentorCategories)
-                .HasForeignKey(mc => mc.Mentor_Id);
+                .WithMany(m => m.Kategoriler)
+                .HasForeignKey(mc => mc.MentorId);
+
 
             builder.HasOne(mc => mc.Categories)
-                .WithMany(c => c.MentorCategory)
-                .HasForeignKey(mc => mc.Category_Id);
+                .WithMany(c => c.Mentorler)
+                .HasForeignKey(cm => cm.CategoryId);
+                
         }
     }
 }

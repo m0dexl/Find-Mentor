@@ -19,7 +19,12 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.IsDeleted).IsRequired();
 
-        builder.HasOne(x => x.Mentor).WithOne(x => x.User).HasForeignKey<User>(x => x.Mentor_Id);
+        //builder.HasOne(x => x.Mentor).WithOne(x => x.User).HasForeignKey<User>(x => x.Mentor_Id);
+        // yeni cikardim 24/09 cunku kalitimla cozdum birebir iliskiye gerek kalmadi
+
+        builder.HasOne(x => x.Mentor)
+                .WithOne(x => x.User)
+                .HasForeignKey<User>(x => x.Id);
 
     }
 }

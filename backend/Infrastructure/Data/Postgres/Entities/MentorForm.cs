@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Postgres.Entities
 {
-    public class MentorCategory
+    public class MentorForm
     {
         public int MentorId { get; set; }
         public Mentor Mentor { get; set; }
 
-        public int CategoryId { get; set; }
-        public virtual Categories Categories { get; set; }
+        public int FormId {  get; set; }
+        public virtual Form Form { get; set; }
     }
 }
