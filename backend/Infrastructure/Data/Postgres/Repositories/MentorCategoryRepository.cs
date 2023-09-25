@@ -33,7 +33,7 @@ namespace Infrastructure.Data.Postgres.Repositories
             return mentorCategories;
         }
 
-        public async Task<IList<MentorCategory>> GetByMentorCategoryIdAsync()
+        public async Task<IList<MentorCategory>> GetByMentorCategoryIdAsync(int id)
         {
             // Tüm kategorileri çekmek için GetAllAsync'i kullanabiliriz
             return await GetAllAsync();

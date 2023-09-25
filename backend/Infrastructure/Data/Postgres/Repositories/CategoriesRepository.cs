@@ -33,10 +33,11 @@ namespace Infrastructure.Data.Postgres.Repositories
             return categories;
         }
 
-        public async Task<IList<Categories>> GetByCategoriesIdAsync()
+        public async Task<IList<Categories>> GetByCategoriesIdAsync(int id)
         {
             // Tüm kategorileri çekmek için GetAllAsync'i kullanabiliriz
             return await GetAllAsync();
         }
+
     }
 }

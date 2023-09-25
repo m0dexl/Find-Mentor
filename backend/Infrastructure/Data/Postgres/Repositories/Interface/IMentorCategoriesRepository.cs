@@ -10,6 +10,6 @@ namespace Infrastructure.Data.Postgres.Repositories.Interface
 {
     public interface IMentorCategoriesRepository: IRepository<MentorCategory,int>
     {
-        Task<IList<MentorCategory>> GetByMentorCategoriesIdAsync(int id);
+        Task<IList<MentorCategory>> GetByMentorCategoryIdAsync(int id);
     }
 }
