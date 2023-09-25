@@ -6,6 +6,8 @@ public interface IUnitOfWork : IDisposable
 {
     IUserRepository Users { get; }
     IUserTokenRepository UserTokens { get; }
+    IFormRepository Forms { get; }
+    IMentorFormRepository MentorForms { get; }
 
     ICategoriesRepository Categories { get; }
 
