@@ -34,7 +34,7 @@ namespace Infrastructure.Data.Postgres.Repositories
             return forms;
         }
 
-        public async Task<IList<Form>> GetByTicketIdAsync()
+        public async Task<IList<Form>> GetByFormIdAsync(int id)
         {
             // Tüm formları çekmek için GetAllAsync'i kullanabiliriz
             return await GetAllAsync();

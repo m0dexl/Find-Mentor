@@ -34,7 +34,7 @@ namespace Infrastructure.Data.Postgres.Repositories
             return mentorforms;
         }
 
-        public async Task<IList<MentorForm>> GetByTicketIdAsync()
+        public async Task<IList<MentorForm>> GetByMentorFormIdAsync(int id)
         {
             // Tüm formları çekmek için GetAllAsync'i kullanabiliriz
             return await GetAllAsync();

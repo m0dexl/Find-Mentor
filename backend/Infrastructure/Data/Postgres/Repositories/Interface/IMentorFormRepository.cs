@@ -10,5 +10,7 @@ namespace Infrastructure.Data.Postgres.Repositories.Interface
 {
     public interface IMentorFormRepository : IRepository<MentorForm, int>
     {
+        Task<IList<MentorForm>> GetByMentorFormIdAsync(int id);
+
     }
 }

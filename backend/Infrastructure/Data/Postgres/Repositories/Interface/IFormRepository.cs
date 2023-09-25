@@ -10,5 +10,7 @@ namespace Infrastructure.Data.Postgres.Repositories.Interface
 {
     public interface IFormRepository :IRepository<Form, int> 
     {
+        Task<IList<Form>> GetByFormIdAsync(int id);
+
     }
 }
