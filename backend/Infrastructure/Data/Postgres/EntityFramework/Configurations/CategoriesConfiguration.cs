@@ -19,7 +19,11 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
             //builder.HasOne(x => x.Category_Id).WithMany( m => m.)
 
+<<<<<<< HEAD
             //builder.HasKey(x => x.Category_Id);
+=======
+            builder.HasKey(x => x.Id);
+>>>>>>> 2369bb8f74374f008420511d6c190d0acda2ad21
             builder.Property(x => x.Category_Name).IsRequired();
             builder.Property(x => x.Category_Description).IsRequired();
             builder.Property(x => x.Category_Photo).IsRequired();

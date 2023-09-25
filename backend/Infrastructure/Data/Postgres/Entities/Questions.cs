@@ -9,7 +9,11 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Questions: Entity<int>
     {
+<<<<<<< HEAD
         //public int Question_Id {  get; set; } entity den geliyor
+=======
+        public int Form_Id {  get; set; }
+>>>>>>> 2369bb8f74374f008420511d6c190d0acda2ad21
         public string Question_Text { get; set; }
 
         public ICollection<FormQuestion> FormsForQuestions { get; set; }

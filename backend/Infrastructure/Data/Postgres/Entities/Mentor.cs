@@ -10,7 +10,11 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Mentor : Entity<int> // burası normalde entity idi. userdan kalıtım aldım. 24/09
     {
+<<<<<<< HEAD
         //public int Mentor_Id { get; set; } burayı yeni değiştirdim artık userdan id aliyor. 24/09
+=======
+        //public int Mentor_Id { get; set; }
+>>>>>>> 2369bb8f74374f008420511d6c190d0acda2ad21
 
         //public string Category_Id { get; set; }
 

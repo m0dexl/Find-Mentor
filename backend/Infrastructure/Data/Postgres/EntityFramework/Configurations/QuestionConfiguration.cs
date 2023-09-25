@@ -15,6 +15,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
         public override void Configure(EntityTypeBuilder<Questions> builder)
         {
             base.Configure(builder);
+<<<<<<< HEAD
 
 
 
@@ -26,6 +27,16 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
             //sadas
             //builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Question_Id);
+=======
+            builder.HasKey(fq => new { fq.Id }); 
+
+            //builder.HasOne(f => f.Form)
+            //    .WithMany(f => f.QuestionsLıst)
+            //    .HasForeignKey(fq => fq.Form_Id); 
+
+            
+            builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Id);
+>>>>>>> 2369bb8f74374f008420511d6c190d0acda2ad21
 
 
         }
