@@ -13,7 +13,7 @@ namespace Infrastructure.Data.Postgres.Entities
 
         public int Form_Owner_Mentor_Id { get; set; }
 
-        public virtual ICollection<Questions> QuestionsLıst { get; set; } = new List<Questions>();
+        //public virtual ICollection<Questions> QuestionsLıst { get; set; } = new List<Questions>();
 
         public Mentor Mentor { get; set; }
 

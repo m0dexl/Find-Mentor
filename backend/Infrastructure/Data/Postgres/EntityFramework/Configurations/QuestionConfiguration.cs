@@ -17,12 +17,12 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
             builder.HasKey(fq => new { fq.Id }); 
 
-            builder.HasOne(fq => fq.Form)
-                .WithMany(f => f.QuestionsLıst)
-                .HasForeignKey(fq => fq.Form_Id); 
+            //builder.HasOne(f => f.Form)
+            //    .WithMany(f => f.QuestionsLıst)
+            //    .HasForeignKey(fq => fq.Form_Id); 
 
             
-            //builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Id);
+            builder.HasOne(x => x.Form).WithOne(x => x.Questions).HasForeignKey<Questions>(x => x.Id);
 
 
         }
