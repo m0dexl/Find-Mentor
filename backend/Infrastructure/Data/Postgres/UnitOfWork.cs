@@ -13,6 +13,8 @@ public class UnitOfWork : IUnitOfWork
 
     private UserRepository? _userRepository;
     private UserTokenRepository? _userTokenRepository;
+    private FormRepository? _formRepository;
+    private MentorFormRepository? _mentorFormRepository;
 
     public UnitOfWork(PostgresContext postgresContext)
     {
@@ -21,6 +23,10 @@ public class UnitOfWork : IUnitOfWork
 
     public IUserRepository Users => _userRepository ??= new UserRepository(_postgresContext);
     public IUserTokenRepository UserTokens => _userTokenRepository ??= new UserTokenRepository(_postgresContext);
+
+    public IFormRepository Forms => _formRepository ??= new FormRepository(_postgresContext);
+    public IMentorFormRepository MentorForms => _mentorFormRepository ??= new MentorFormRepository(_postgresContext);
+
 
     public async Task<int> CommitAsync()
     {
