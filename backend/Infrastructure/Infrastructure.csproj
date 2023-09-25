@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
+
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="FluentValidation" Version="11.5.2" />
     <PackageReference Include="MailKit" Version="4.0.0" />
@@ -24,7 +24,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-=======
     <Compile Remove="Data\Postgres\Migrations\**" />
     <EmbeddedResource Remove="Data\Postgres\Migrations\**" />
     <None Remove="Data\Postgres\Migrations\**" />
@@ -40,7 +39,6 @@
     
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
->>>>>>> 2369bb8f74374f008420511d6c190d0acda2ad21
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.29.0" />
