@@ -17,9 +17,11 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
            // builder.Property(x => x.Form_Id).IsRequired();
           
-
+            
 
             builder.HasKey(s => s.Id);
+            builder.Property(x => x.FormTitle).IsRequired();
+            builder.Property(x => x.FormDescription).IsRequired();
 
             builder.HasMany(s => s.QuestionsForForms)
                    .WithOne(sc => sc.Form)
