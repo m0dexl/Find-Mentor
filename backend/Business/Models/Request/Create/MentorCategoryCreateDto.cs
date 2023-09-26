@@ -8,7 +8,7 @@ namespace Business.Models.Request.Create
 {
     public class MentorCategoryCreateDto
     {
-        public int Id { get; set; }
+        
         public int MentorId { get; set; }
         public int CategoryId { get; set; }
     }
