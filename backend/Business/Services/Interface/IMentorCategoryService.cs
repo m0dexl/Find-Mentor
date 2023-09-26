@@ -1,5 +1,6 @@
 ﻿using Business.Models.Response;
 using Business.Services.Base;
+using Business.Services.Base.Interface;
 using Infrastructure.Data.Postgres.Entities;
 using System;
 using System.Collections.Generic;
