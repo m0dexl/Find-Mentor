@@ -16,6 +16,7 @@ public class Profiles : AutoMapper.Profile
         CreateMap<MentorCreateDto, Mentor>();
         CreateMap<MentorUpdateDto, Mentor>();
 
+
         //aa
         CreateMap<CategoriesCreateDto, Categories>();
         CreateMap<CategoriesUpdateDto, Categories>();
@@ -23,8 +24,13 @@ public class Profiles : AutoMapper.Profile
         CreateMap<MentorCategoryCreateDto, MentorCategory>();
         CreateMap<MentorCategoryUpdateDto, MentorCategory>();
 
+
+
         CreateMap<MentorFormCreateDto, Mentor>();
         CreateMap<MentorFormUpdateDto, Mentor>();
+
+
+
 
 
 
