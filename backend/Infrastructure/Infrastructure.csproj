@@ -24,9 +24,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-    <Compile Remove="Data\Postgres\Migrations\**" />
-    <EmbeddedResource Remove="Data\Postgres\Migrations\**" />
-    <None Remove="Data\Postgres\Migrations\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +43,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Postgres\Migrations\" />
   </ItemGroup>
 
 </Project>

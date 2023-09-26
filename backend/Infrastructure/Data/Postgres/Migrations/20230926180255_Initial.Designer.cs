@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Postgres.Migrations
 {
     [DbContext(typeof(PostgresContext))]
-    [Migration("20230924210127_Initial")]
+    [Migration("20230926180255_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -24,21 +24,6 @@ namespace Infrastructure.Data.Postgres.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("CategoriesMentor", b =>
-                {
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("MentorId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("CategoriesId", "MentorId");
-
-                    b.HasIndex("MentorId");
-
-                    b.ToTable("CategoriesMentor");
-                });
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Categories", b =>
                 {
@@ -53,10 +38,6 @@ namespace Infrastructure.Data.Postgres.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Category_Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Category_Photo")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -77,42 +58,63 @@ namespace Infrastructure.Data.Postgres.Migrations
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Form", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    b.Property<int?>("CategoriesId")
-                        .HasColumnType("integer");
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("Form_Owner_Mentor_Id")
-                        .HasColumnType("integer");
+                    b.Property<string>("FormDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("FormTitle")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
-
-                    b.Property<int>("QuestionsId")
-                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriesId");
-
-                    b.HasIndex("QuestionsId");
-
                     b.ToTable("Form");
                 });
 
-            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Mentor", b =>
+            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.FormQuestion", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("FormId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("QuestionsId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FormId");
+
+                    b.HasIndex("QuestionsId");
+
+                    b.ToTable("FormQuestion");
+                });
+
+            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Mentor", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Availability")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -127,33 +129,55 @@ namespace Infrastructure.Data.Postgres.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("User_Id")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("isAvailable")
-                        .HasColumnType("boolean");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("User_Id")
-                        .IsUnique();
 
                     b.ToTable("Mentors");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.MentorCategory", b =>
                 {
-                    b.Property<int>("Mentor_Id")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    b.Property<int>("Category_Id")
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
                         .HasColumnType("integer");
 
-                    b.HasKey("Mentor_Id", "Category_Id");
+                    b.Property<int>("MentorId")
+                        .HasColumnType("integer");
 
-                    b.HasIndex("Category_Id");
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("MentorId");
 
                     b.ToTable("MentorCategory");
+                });
+
+            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.MentorForm", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("FormId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MentorId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FormId");
+
+                    b.HasIndex("MentorId");
+
+                    b.ToTable("MentorForm");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Questions", b =>
@@ -182,8 +206,6 @@ namespace Infrastructure.Data.Postgres.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Form_Id");
-
                     b.ToTable("Questions");
                 });
 
@@ -208,9 +230,6 @@ namespace Infrastructure.Data.Postgres.Migrations
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
-
-                    b.Property<int>("Mentor_Id")
-                        .HasColumnType("integer");
 
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired()
@@ -259,40 +278,21 @@ namespace Infrastructure.Data.Postgres.Migrations
                     b.ToTable("UserTokens");
                 });
 
-            modelBuilder.Entity("CategoriesMentor", b =>
+            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.FormQuestion", b =>
                 {
-                    b.HasOne("Infrastructure.Data.Postgres.Entities.Categories", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Infrastructure.Data.Postgres.Entities.Mentor", null)
-                        .WithMany()
-                        .HasForeignKey("MentorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Form", b =>
-                {
-                    b.HasOne("Infrastructure.Data.Postgres.Entities.Categories", null)
-                        .WithMany("Forms")
-                        .HasForeignKey("CategoriesId");
-
-                    b.HasOne("Infrastructure.Data.Postgres.Entities.Mentor", "Mentor")
-                        .WithMany("Forms")
-                        .HasForeignKey("Id")
+                    b.HasOne("Infrastructure.Data.Postgres.Entities.Form", "Form")
+                        .WithMany("QuestionsForForms")
+                        .HasForeignKey("FormId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Infrastructure.Data.Postgres.Entities.Questions", "Questions")
-                        .WithMany()
+                        .WithMany("FormsForQuestions")
                         .HasForeignKey("QuestionsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Mentor");
+                    b.Navigation("Form");
 
                     b.Navigation("Questions");
                 });
@@ -301,7 +301,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                 {
                     b.HasOne("Infrastructure.Data.Postgres.Entities.User", "User")
                         .WithOne("Mentor")
-                        .HasForeignKey("Infrastructure.Data.Postgres.Entities.Mentor", "User_Id")
+                        .HasForeignKey("Infrastructure.Data.Postgres.Entities.Mentor", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -311,14 +311,14 @@ namespace Infrastructure.Data.Postgres.Migrations
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.MentorCategory", b =>
                 {
                     b.HasOne("Infrastructure.Data.Postgres.Entities.Categories", "Categories")
-                        .WithMany("MentorCategory")
-                        .HasForeignKey("Category_Id")
+                        .WithMany("MentorsForCategory")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Infrastructure.Data.Postgres.Entities.Mentor", "Mentor")
-                        .WithMany("MentorCategories")
-                        .HasForeignKey("Mentor_Id")
+                        .WithMany("CategoriesForMentor")
+                        .HasForeignKey("MentorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -327,15 +327,23 @@ namespace Infrastructure.Data.Postgres.Migrations
                     b.Navigation("Mentor");
                 });
 
-            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Questions", b =>
+            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.MentorForm", b =>
                 {
                     b.HasOne("Infrastructure.Data.Postgres.Entities.Form", "Form")
-                        .WithMany("QuestionsLıst")
-                        .HasForeignKey("Form_Id")
+                        .WithMany("MentorsForForm")
+                        .HasForeignKey("FormId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Infrastructure.Data.Postgres.Entities.Mentor", "Mentor")
+                        .WithMany("FormsForMentor")
+                        .HasForeignKey("MentorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Form");
+
+                    b.Navigation("Mentor");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.UserToken", b =>
@@ -351,21 +359,26 @@ namespace Infrastructure.Data.Postgres.Migrations
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Categories", b =>
                 {
-                    b.Navigation("Forms");
-
-                    b.Navigation("MentorCategory");
+                    b.Navigation("MentorsForCategory");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Form", b =>
                 {
-                    b.Navigation("QuestionsLıst");
+                    b.Navigation("MentorsForForm");
+
+                    b.Navigation("QuestionsForForms");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Mentor", b =>
                 {
-                    b.Navigation("Forms");
+                    b.Navigation("CategoriesForMentor");
 
-                    b.Navigation("MentorCategories");
+                    b.Navigation("FormsForMentor");
+                });
+
+            modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Questions", b =>
+                {
+                    b.Navigation("FormsForQuestions");
                 });
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.User", b =>
