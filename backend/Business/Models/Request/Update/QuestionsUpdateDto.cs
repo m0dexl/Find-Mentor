@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Business.Models.Request.Update
 {
-    public class MentorCategoryUpdateDto
+    public class QuestionsUpdateDto
     {
-       
-        public int MentorId { get; set; }
-        public int CategoryId { get; set; }
+        public int Form_Id { get; set; }
+        public string Question_Text { get; set; }
     }
 }

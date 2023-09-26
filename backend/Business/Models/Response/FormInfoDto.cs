@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Business.Models.Response
 {
-    public class MentorCategoryInfoDto
+    public class FormInfoDto
     {
-       
-        public int MentorId { get; set; }
-        public int CategoryId { get; set; }
+        public int Id { get; set; }
+        public string FormTitle { get; set; }
+        public string FormDescription { get; set; }
     }
 }

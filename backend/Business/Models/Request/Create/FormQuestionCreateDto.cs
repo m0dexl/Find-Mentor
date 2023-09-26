@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Business.Models.Request.Create
 {
-    public class MentorCategoryCreateDto
+    public class FormQuestionCreateDto
     {
-        
-        public int MentorId { get; set; }
-        public int CategoryId { get; set; }
+        public int Id { get; set; }
+        public int FormId { get; set; }
+        public int QuestionsId { get; set; }
+
     }
 }
