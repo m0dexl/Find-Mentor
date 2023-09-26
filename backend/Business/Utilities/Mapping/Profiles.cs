@@ -29,6 +29,14 @@ public class Profiles : AutoMapper.Profile
         CreateMap<MentorFormCreateDto, Mentor>();
         CreateMap<MentorFormUpdateDto, Mentor>();
 
+        CreateMap<FormCreateDto,Form>();
+        CreateMap<FormUpdateDto, Form>();
+
+        CreateMap<FormQuestionCreateDto,FormQuestion>();
+        CreateMap<FormQuestionUpdateDto, FormQuestion>();
+
+        CreateMap<QuestionsCreateDto,Questions>();
+        CreateMap<QuestionsUpdateDto,Questions>();
 
 
 
