@@ -9,7 +9,6 @@ namespace Business.Models.Request.Create
 {
     public class MentorFormCreateDto
     {
-        public int Id { get; set; } = default!;
         public int MentorId { get; set; } = default!;
         public int FormId { get; set; } = default!;
         public UserType UserType { get; set; } = UserType.Mentor;
