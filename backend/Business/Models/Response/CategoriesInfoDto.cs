@@ -11,5 +11,7 @@ namespace Business.Models.Response
         public string Category_Name { get; set; }
         public string Category_Description { get; set; }
 
+        public MentorInfoDto Mentor { get; set; }
+
     }
 }
