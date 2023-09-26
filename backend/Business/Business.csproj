@@ -33,10 +33,4 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Request\Create\" />
-    <Folder Include="Models\Request\Functional\" />
-    <Folder Include="Models\Request\Update\" />
-  </ItemGroup>
-
 </Project>

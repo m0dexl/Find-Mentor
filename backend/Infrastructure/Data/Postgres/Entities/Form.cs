@@ -17,7 +17,8 @@ namespace Infrastructure.Data.Postgres.Entities
         //public virtual ICollection<Questions> QuestionsV { get; set; } = new List<Questions>();
 
         //public virtual ICollection<Questions> QuestionsLıst { get; set; } = new List<Questions>();
-
+        public string FormTitle { get; set; }   
+        public string FormDescription { get; set; }
 
         public ICollection<MentorForm> MentorsForForm { get; set; }
 
