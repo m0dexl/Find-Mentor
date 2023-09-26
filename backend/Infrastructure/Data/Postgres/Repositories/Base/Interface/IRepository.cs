@@ -11,7 +11,7 @@ public interface IRepository<TEntity, in TId> where TEntity : class
     Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter);
     Task<IList<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>>? filter = null);
     Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> filter);
-    Task<TEntity> GetByIdAsync<TId>(TId? id);
+    Task<TEntity> GetByIdAsync(TId id);
     Task<int> GetCountAsync(Expression<Func<TEntity, bool>>? filter = null);
     void Remove(TEntity entity);
     void RemoveById(TId id);
