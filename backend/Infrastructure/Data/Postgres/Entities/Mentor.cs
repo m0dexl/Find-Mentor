@@ -24,7 +24,7 @@ namespace Infrastructure.Data.Postgres.Entities
 
         public User User { get; set; }
 
-
+        //deneme
         public string Mentor_Description { get; set; }
         public MentorStatus Availability { get; set; } = MentorStatus.Available;
 
