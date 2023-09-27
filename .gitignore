@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/find-mentor-project/v17/.wsuo
+/.vs/VSWorkspaceState.json
+/.vs/VSWorkspaceState.json
+/backend/Business/Business.csproj
+/backend/Core/Core.csproj
+/backend/Infrastructure/Data/Postgres/Migrations/20230926182132_Initial.Designer.cs
+/backend/Infrastructure/Data/Postgres/Migrations/20230926182132_Initial.cs
+/backend/Infrastructure/Data/Postgres/Migrations/20230926180255_Initial.Designer.cs
+/backend/Infrastructure/Data/Postgres/Migrations/20230926180255_Initial.cs
+/backend/Infrastructure/Infrastructure.csproj
+/backend/Web/appsettings.Development.json
+/backend/Web/appsettings.Production.json
+/backend/Web/Web.csproj
