@@ -16,5 +16,6 @@ namespace Business.Models.Response
 
         //Mentor bilgilerine ulaşmak için nesne oluşturduk
         public MentorInfoDto Mentor { get; set; }
+        public FormInfoDto FormInfo { get; set; }
     }
 }

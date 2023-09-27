@@ -12,7 +12,8 @@ namespace Business.Models.Response
         public int MentorId { get; set; }
         public int CategoryId { get; set; }
 
-
+        public MentorInfoDto MentorInfoDto { get; set; }
+        public CategoriesInfoDto CategoriesInfoDto { get; set; }
         
     }
 }
