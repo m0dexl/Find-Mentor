@@ -16,8 +16,11 @@ namespace Business.Services
 {
     public class CategoriesService : BaseService<Categories, int, CategoriesInfoDto>, ICategoriesService
     {
+        private readonly IRepository<Categories, int> _categoriesRepository;
+
         public CategoriesService(IUnitOfWork unitOfWork, IRepository<Categories, int> repository, IMapperHelper mapperHelper) : base(unitOfWork, repository, mapperHelper)
         {
+            _categoriesRepository = repository;
         }
     }
 }

@@ -40,22 +40,22 @@ public static class DependencyInjection
 
     public static void AddMyTransient(this IServiceCollection serviceCollection)
     {
-        serviceCollection.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-        serviceCollection.AddTransient<IMapperHelper, MapperHelper>();
-        serviceCollection.AddTransient<IValidationHelper, ValidationHelper>();
-        serviceCollection.AddTransient<IJwtTokenHelper, JwtTokenHelper>();
-        serviceCollection.AddTransient<IHashingHelper, HashingHelper>();
-        serviceCollection.AddTransient<IMailHelper, MailHelper>();
+        //serviceCollection.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+        //serviceCollection.AddTransient<IMapperHelper, MapperHelper>();
+        //serviceCollection.AddTransient<IValidationHelper, ValidationHelper>();
+        //serviceCollection.AddTransient<IJwtTokenHelper, JwtTokenHelper>();
+        //serviceCollection.AddTransient<IHashingHelper, HashingHelper>();
+        //serviceCollection.AddTransient<IMailHelper, MailHelper>();
 
-        serviceCollection.AddTransient<IUnitOfWork, UnitOfWork>();
-        serviceCollection.AddTransient<IClaimHelper, ClaimHelper>();
-        serviceCollection.AddTransient<IAuthService, AuthService>();
-        serviceCollection.AddTransient<ICategoriesService, CategoriesService>();
-        serviceCollection.AddTransient<IFormService, FormService>();
-        serviceCollection.AddTransient<IMentorCategoryService, MentorCategoryService>();
-        serviceCollection.AddTransient<IMentorFormService, MentorFormService>();
-        serviceCollection.AddTransient<IMentorService, MentorService>();
-        serviceCollection.AddTransient<IQuestionsService, QuestionsService>();
-        serviceCollection.AddTransient<IUserService, UserService>();
+        //serviceCollection.AddTransient<IUnitOfWork, UnitOfWork>();
+        //serviceCollection.AddTransient<IClaimHelper, ClaimHelper>();
+        //serviceCollection.AddTransient<IAuthService, AuthService>();
+        //serviceCollection.AddTransient<ICategoriesService, CategoriesService>();
+        //serviceCollection.AddTransient<IFormService, FormService>();
+        //serviceCollection.AddTransient<IMentorCategoryService, MentorCategoryService>();
+        //serviceCollection.AddTransient<IMentorFormService, MentorFormService>();
+        //serviceCollection.AddTransient<IMentorService, MentorService>();
+        //serviceCollection.AddTransient<IQuestionsService, QuestionsService>();
+        //serviceCollection.AddTransient<IUserService, UserService>();
     }
 }
