@@ -11,7 +11,7 @@ public class Profiles : AutoMapper.Profile
     public Profiles()
     {
         CreateMap<RegisterDto, User>();
-        CreateMap<User, Models.Response.UserProfileDto>();
+        CreateMap<User, UserProfileDto>();
 
         CreateMap<MentorCreateDto, Mentor>();
         CreateMap<MentorUpdateDto, Mentor>();
@@ -38,14 +38,6 @@ public class Profiles : AutoMapper.Profile
         CreateMap<QuestionsCreateDto,Questions>();
         CreateMap<QuestionsUpdateDto,Questions>();
 
-        CreateMap<UserUpdateDto, User>();
-        CreateMap<Form, FormInfoDto>();
-        CreateMap<Mentor, MentorInfoDto>();
-        CreateMap<Categories, CategoriesInfoDto>();
-        CreateMap<MentorCategory, MentorCategoryInfoDto>();
-        CreateMap<MentorForm, MentorFormInfoDto>();
-        CreateMap<FormQuestion, FormQuestionInfoDto>();
-        CreateMap<Questions,QuestionsInfoDto>();
 
 
 
