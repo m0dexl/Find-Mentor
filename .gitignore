@@ -15,3 +15,4 @@
 /backend/Web/appsettings.Development.json
 /backend/Web/appsettings.Production.json
 /backend/Web/Web.csproj
+/backend/Infrastructure/Infrastructure.csproj

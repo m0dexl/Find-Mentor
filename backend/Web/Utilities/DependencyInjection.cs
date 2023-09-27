@@ -18,6 +18,14 @@ public static class DependencyInjection
         serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
         serviceCollection.AddScoped<IClaimHelper, ClaimHelper>();
         serviceCollection.AddScoped<IAuthService, AuthService>();
+        serviceCollection.AddScoped<ICategoriesService, CategoriesService>();
+        serviceCollection.AddScoped<IFormService, FormService>();
+        serviceCollection.AddScoped<IMentorCategoryService, MentorCategoryService>();
+        serviceCollection.AddScoped<IMentorFormService, MentorFormService>();
+        serviceCollection.AddScoped<IMentorService, MentorService>();
+        serviceCollection.AddScoped<IQuestionsService, QuestionsService>();
+        serviceCollection.AddScoped<IUserService, UserService>();
+
     }
 
     public static void AddMySingleton(this IServiceCollection serviceCollection)
