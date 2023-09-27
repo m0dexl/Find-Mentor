@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Models.Request.Create
+namespace Business.Models.Response
 {
-    public class FormQuestionCreateDto
+    public class FormQuestionInfoDto
     {
+        public int Id { get; set; }
         public int FormId { get; set; }
         public int QuestionsId { get; set; }
 
