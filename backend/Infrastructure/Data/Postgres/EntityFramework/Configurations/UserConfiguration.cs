@@ -1,4 +1,6 @@
-﻿using Infrastructure.Data.Postgres.Entities;
+﻿using Core.Utilities;
+using System.Text;
+using Infrastructure.Data.Postgres.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -26,6 +28,31 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 .WithOne(x => x.User)
                 .HasForeignKey<User>(x => x.Id);
 
+        using (var hmac = new System.Security.Cryptography.HMACSHA512())
+        {
+            var passwordSalt = hmac.Key;
+            var passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("123123123"));
+
+
+
+            var data = new object[]
+            {
+            new {
+            Id = 8,
+             Email = "seyit@reateacher.com",
+            UserName = "seyitadmin",
+            FirstName = "Seyit",
+             FullName = "Seyit Camcı",         
+            PasswordSalt = passwordSalt,
+             PasswordHash = passwordHash,
+            UserType = UserType.Admin,
+             CreatedAt = DateTime.UtcNow.ToTimeZone(),
+            IsDeleted = false
+         }
+            };
+            builder.HasData(data);
+
+        }
 
     }
 }
