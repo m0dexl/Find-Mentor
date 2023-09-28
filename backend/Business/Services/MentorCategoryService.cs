@@ -16,7 +16,7 @@ namespace Business.Services
 {
     public class MentorCategoryService : BaseService<MentorCategory, int, MentorCategoryInfoDto>, IMentorCategoryService
     {
-        public MentorCategoryService(IUnitOfWork unitOfWork, IRepository<MentorCategory, int> repository, IMapperHelper mapperHelper) : base(unitOfWork, repository, mapperHelper)
+        public MentorCategoryService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) : base(unitOfWork, unitOfWork.MentorCategories, mapperHelper)
         {
         }
     }

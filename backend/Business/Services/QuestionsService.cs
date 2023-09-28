@@ -16,8 +16,8 @@ namespace Business.Services
 {
     public class QuestionsService : BaseService<Questions, int, QuestionsInfoDto>, IQuestionsService
     {
-        public QuestionsService(IUnitOfWork unitOfWork, IRepository<Questions, int> repository, IMapperHelper mapperHelper) : base(unitOfWork, repository, mapperHelper)
-        {
+        public QuestionsService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) : base(unitOfWork, unitOfWork.Questions, mapperHelper)
         }
+
     }
 }

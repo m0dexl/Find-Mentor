@@ -16,7 +16,7 @@ namespace Business.Services
 {
     public class FormService : BaseService<Form, int, FormInfoDto>, IFormService
     {
-        public FormService(IUnitOfWork unitOfWork, IRepository<Form, int> repository, IMapperHelper mapperHelper) : base(unitOfWork, repository, mapperHelper)
+        public FormService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) : base(unitOfWork, unitOfWork.Forms, mapperHelper)
         {
         }
     }

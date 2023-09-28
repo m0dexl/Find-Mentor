@@ -16,7 +16,7 @@ namespace Business.Services
 {
     public class MentorFormService : BaseService<MentorForm, int, MentorFormInfoDto>, IMentorFormService
     {
-        public MentorFormService(IUnitOfWork unitOfWork, IRepository<MentorForm, int> repository, IMapperHelper mapperHelper) : base(unitOfWork, repository, mapperHelper)
+        public MentorFormService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) : base(unitOfWork, unitOfWork.MentorForms, mapperHelper)
         {
         }
     }

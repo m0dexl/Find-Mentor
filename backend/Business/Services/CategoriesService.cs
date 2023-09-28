@@ -16,7 +16,7 @@ namespace Business.Services
 {
     public class CategoriesService : BaseService<Categories, int, CategoriesInfoDto>, ICategoriesService
     {
-        public CategoriesService(IUnitOfWork unitOfWork, IRepository<Categories, int> repository, IMapperHelper mapperHelper) : base(unitOfWork, repository, mapperHelper)
+        public CategoriesService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) : base(unitOfWork, unitOfWork.Categories, mapperHelper)
         {
         }
     }
