@@ -12,7 +12,7 @@ namespace Business.Models.Response
         public string Category_Name { get; set; } = default!;
         public string Category_Description { get; set; } = default!;
 
-        public MentorInfoDto Mentor { get; set; }
+        public MentorInfoDto Mentor { get; set; } = default!;
 
     }
 }
