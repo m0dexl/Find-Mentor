@@ -8,6 +8,8 @@ namespace Web.Controllers
 {
     public class UserController : BaseCRUDController<UserController, int, RegisterDto, UserUpdateDto, UserProfileDto>
     {
-       
+        public UserController(IBaseService<UserController, int, UserProfileDto> service) : base(service)
+        {
+        }
     }
 }

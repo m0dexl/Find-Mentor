@@ -10,5 +10,5 @@ public class UserProfileDto
     public string Email { get; set; } = default!;
     public UserType UserType { get; set; }
 
-    public MentorInfoDto MentorInfo { get; set; }
+    public MentorInfoDto Mentor { get; set; }
 }
