@@ -8,8 +8,8 @@ namespace Business.Models.Response
 {
     public class FormInfoDto
     {
-        public int Id { get; set; }
-        public string FormTitle { get; set; }
-        public string FormDescription { get; set; }
+        public int Id { get; set; } = default!;
+        public string FormTitle { get; set; } = default!;
+        public string FormDescription { get; set; } = default!;
     }
 }

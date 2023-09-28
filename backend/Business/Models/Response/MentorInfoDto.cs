@@ -10,7 +10,7 @@ namespace Business.Models.Response
     {
         public string Mentor_Description { get; set; } = default!;
 
-        public MentorStatus Availability { get; set; } = MentorStatus.Available;
+        public MentorStatus Availability { get; set; }
 
         public UserProfileDto UserProfile { get; set; }
     }

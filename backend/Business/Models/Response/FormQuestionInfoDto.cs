@@ -8,9 +8,9 @@ namespace Business.Models.Response
 {
     public class FormQuestionInfoDto
     {
-        public int Id { get; set; }
-        public int FormId { get; set; }
-        public int QuestionsId { get; set; }
+        public int Id { get; set; } = default!;
+        public int FormId { get; set; } = default!;
+        public int QuestionsId { get; set; } = default!;
 
         public FormInfoDto FormInfoDto { get; set; }
         public QuestionsInfoDto QuestionsInfoDto { get; set; }

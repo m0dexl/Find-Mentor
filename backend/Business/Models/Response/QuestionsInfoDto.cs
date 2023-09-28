@@ -8,8 +8,8 @@ namespace Business.Models.Response
 {
     public class QuestionsInfoDto
     {
-        public int Id { get; set; }
-        public int Form_Id { get; set; }
-        public string Question_Text { get; set; }
+        public int Id { get; set; } = default!;
+        public int Form_Id { get; set; } = default!;
+        public string Question_Text { get; set; } = default!;
     }
 }

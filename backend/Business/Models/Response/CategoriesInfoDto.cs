@@ -8,8 +8,9 @@ namespace Business.Models.Response
 {
     public class CategoriesInfoDto
     {
-        public string Category_Name { get; set; }
-        public string Category_Description { get; set; }
+        public int Id { get; set; } = default!;
+        public string Category_Name { get; set; } = default!;
+        public string Category_Description { get; set; } = default!;
 
         public MentorInfoDto Mentor { get; set; }
 

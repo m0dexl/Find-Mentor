@@ -15,7 +15,7 @@ namespace Business.Models.Request.Update
         public string UserName { get; set; } = default!;
         public string FullName { get; set; } = default!;
 
-        public UserType UserType { get; set; } = UserType.Mentor;
+        public UserType UserType { get; set; }
 
     }
 }
