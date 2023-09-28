@@ -8,7 +8,7 @@ namespace Business.Models.Request.Update
 {
     public class CategoriesUpdateDto
     {
-        public string Category_Name { get; set; }
-        public string Category_Description { get; set; }
+        public string Category_Name { get; set; } = default!;
+        public string Category_Description { get; set; } = default!;
     }
 }

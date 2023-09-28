@@ -8,9 +8,8 @@ namespace Business.Models.Request.Create
 {
     public class FormQuestionCreateDto
     {
-        public int Id { get; set; }
-        public int FormId { get; set; }
-        public int QuestionsId { get; set; }
+        public int FormId { get; set; } = default!;
+        public int QuestionsId { get; set; } = default!;
 
     }
 }

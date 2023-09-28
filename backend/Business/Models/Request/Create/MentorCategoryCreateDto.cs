@@ -9,7 +9,7 @@ namespace Business.Models.Request.Create
     public class MentorCategoryCreateDto
     {
         
-        public int MentorId { get; set; }
-        public int CategoryId { get; set; }
+        public int MentorId { get; set; } = default!;
+        public int CategoryId { get; set; } = default!;
     }
 }
