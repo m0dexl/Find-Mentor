@@ -8,7 +8,7 @@ namespace Business.Models.Request.Update
 {
     public class FormQuestionUpdateDto
     {
-        public int Id { get; set; }
+        
         public int FormId { get; set; }
         public int QuestionsId { get; set; }
     }
