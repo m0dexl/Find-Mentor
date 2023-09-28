@@ -56,7 +56,7 @@ public abstract class BaseService<TEntity, TId, TResponseDto> : IBaseService<TEn
     {
         TEntity entity = await _repository.GetByIdAsync(id);
 
-        _mapperHelper.Map<TEntity>(entity);
+        _mapperHelper.Map(entityDTO, entity);
         _repository.Update(entity);
         await _unitOfWork.CommitAsync();
         return new Result(Messages.SuccessfullyUpdatedEntity, ResultStatus.Ok);
