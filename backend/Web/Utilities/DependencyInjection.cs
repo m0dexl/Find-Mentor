@@ -24,6 +24,7 @@ public static class DependencyInjection
         serviceCollection.AddScoped<IMentorFormService, MentorFormService>();
         serviceCollection.AddScoped<IMentorService, MentorService>();
         serviceCollection.AddScoped<IQuestionsService, QuestionsService>();
+        serviceCollection.AddScoped<IUserService, UserService>();
     }
 
     public static void AddMySingleton(this IServiceCollection serviceCollection)
