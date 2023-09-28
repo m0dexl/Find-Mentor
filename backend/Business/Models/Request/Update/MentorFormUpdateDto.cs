@@ -11,6 +11,6 @@ namespace Business.Models.Request.Update
     {
         public int MentorId { get; set; } = default!;
         public int FormId { get; set; } = default!;
-        public UserType UserType { get; set; } = UserType.Mentor;
+        
     }
 }

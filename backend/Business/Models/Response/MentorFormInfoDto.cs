@@ -12,7 +12,7 @@ namespace Business.Models.Response
         public int Id { get; set; } = default!;
         public int MentorId { get; set; } = default!;
         public int FormId { get; set; } = default!;
-        public UserType UserType { get; set; } = UserType.Mentor;
+        
 
         //Mentor bilgilerine ulaşmak için nesne oluşturduk
         public MentorInfoDto Mentor { get; set; }
