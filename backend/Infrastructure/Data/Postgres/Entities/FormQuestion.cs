@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infrastructure.Data.Postgres.Entities.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Postgres.Entities
 {
-    public class FormQuestion
+    public class FormQuestion : Entity<int>
     {
-        public int Id { get; set; }
         public int FormId { get; set; }
         public Form Form { get; set; }
 

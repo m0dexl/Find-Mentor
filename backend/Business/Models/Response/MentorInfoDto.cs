@@ -8,6 +8,7 @@ namespace Business.Models.Response
 {
     public class MentorInfoDto
     {
+        public int Id { get; set; }
         public string Mentor_Description { get; set; } = default!;
 
         public MentorStatus Availability { get; set; }
