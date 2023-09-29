@@ -11,40 +11,40 @@ public class Profiles : AutoMapper.Profile
 {
     public Profiles()
     {
-        CreateMap<RegisterDto, User>();
-        CreateMap<User, UserProfileDto>();
-        CreateMap<UserUpdateDto, User>();
-        CreateMap<User, Models.Response.UserProfileDto>(); //kullanıcı görüntüleme
+        CreateMap<RegisterDto, User>().ReverseMap();
+        CreateMap<User, UserProfileDto>().ReverseMap();
+        CreateMap<UserUpdateDto, User>().ReverseMap();
+        CreateMap<User, Models.Response.UserProfileDto>().ReverseMap(); //kullanıcı görüntüleme
 
-        CreateMap<MentorCreateDto, Mentor>();
-        CreateMap<MentorUpdateDto, Mentor>();
-        CreateMap<Mentor, MentorInfoDto>();
-       
-
-        CreateMap<CategoriesCreateDto, Categories>();
-        CreateMap<CategoriesUpdateDto, Categories>();
-        CreateMap<Categories, CategoriesInfoDto>();
-
-        CreateMap<MentorCategoryCreateDto, MentorCategory>();
-        CreateMap<MentorCategoryUpdateDto, MentorCategory>();
-        CreateMap<MentorCategory, MentorCategoryInfoDto>();
+        CreateMap<MentorCreateDto, Mentor>().ReverseMap();
+        CreateMap<MentorUpdateDto, Mentor>().ReverseMap();
+        CreateMap<Mentor, MentorInfoDto>().ReverseMap();
 
 
-        CreateMap<MentorFormCreateDto, Mentor>();
-        CreateMap<MentorFormUpdateDto, Mentor>();
-        CreateMap<MentorForm, MentorFormInfoDto>();
+        CreateMap<CategoriesCreateDto, Categories>().ReverseMap();
+        CreateMap<CategoriesUpdateDto, Categories>().ReverseMap();
+        CreateMap<Categories, CategoriesInfoDto>().ReverseMap();
 
-        CreateMap<FormCreateDto,Form>();
-        CreateMap<FormUpdateDto, Form>();
-        CreateMap<Form, FormInfoDto>();
+        CreateMap<MentorCategoryCreateDto, MentorCategory>().ReverseMap();
+        CreateMap<MentorCategoryUpdateDto, MentorCategory>().ReverseMap();
+        CreateMap<MentorCategory, MentorCategoryInfoDto>().ReverseMap();
 
-        CreateMap<FormQuestionCreateDto,FormQuestion>();
-        CreateMap<FormQuestionUpdateDto, FormQuestion>();
-        CreateMap<FormQuestion, FormQuestionInfoDto>();
 
-        CreateMap<QuestionsCreateDto,Questions>();
-        CreateMap<QuestionsUpdateDto,Questions>();
-        CreateMap<Questions,QuestionsInfoDto>();
+        CreateMap<MentorFormCreateDto, Mentor>().ReverseMap();
+        CreateMap<MentorFormUpdateDto, Mentor>().ReverseMap();
+        CreateMap<MentorForm, MentorFormInfoDto>().ReverseMap();
+
+        CreateMap<FormCreateDto,Form>().ReverseMap();
+        CreateMap<FormUpdateDto, Form>().ReverseMap();
+        CreateMap<Form, FormInfoDto>().ReverseMap();
+
+        CreateMap<FormQuestionCreateDto,FormQuestion>().ReverseMap();
+        CreateMap<FormQuestionUpdateDto, FormQuestion>().ReverseMap();
+        CreateMap<FormQuestion, FormQuestionInfoDto>().ReverseMap();
+
+        CreateMap<QuestionsCreateDto,Questions>().ReverseMap();
+        CreateMap<QuestionsUpdateDto,Questions>().ReverseMap();
+        CreateMap<Questions,QuestionsInfoDto>().ReverseMap();
 
 
 
