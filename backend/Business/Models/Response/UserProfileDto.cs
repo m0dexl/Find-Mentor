@@ -8,7 +8,14 @@ public class UserProfileDto
     public string UserName { get; set; } = default!;
     public string FullName { get; set; } = default!;
     public string Email { get; set; } = default!;
-    public UserType UserType { get; set; }
+    public UserType UserType { get; set; } = default!;
 
-    public MentorInfoDto Mentor { get; set; }
+    public string Mentor_Description { get; set; } = default!;
+
+    public MentorStatus Availability { get; set; } = default!;
+
+    public MentorCategoryInfoDto CategoriesForMentor { get; set; }
+
+    public MentorFormInfoDto FormsForMentor { get; set; }
+
 }

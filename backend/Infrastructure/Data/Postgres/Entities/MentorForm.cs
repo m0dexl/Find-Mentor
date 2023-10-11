@@ -10,9 +10,9 @@ namespace Infrastructure.Data.Postgres.Entities
     public class MentorForm : Entity<int>
     {
         public int MentorId { get; set; }
-        public Mentor Mentor { get; set; }
+        public User Mentor { get; set; }
 
         public int FormId {  get; set; }
-        public virtual Form Form { get; set; }
+        public Form Form { get; set; }
     }
 }

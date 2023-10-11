@@ -15,5 +15,9 @@ namespace Business.Models.Request.Create
         public byte[] PasswordSalt { get; set; } = default!;
         public byte[] PasswordHash { get; set; } = default!;
         public UserType UserType { get; set; }
+
+        public string Mentor_Description { get; set; } = default!;
+
+        public MentorStatus Availability { get; set; } = MentorStatus.Available;
     }
 }

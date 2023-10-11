@@ -23,7 +23,6 @@ public class PostgresContext : DbContext
         modelBuilder.ApplyConfiguration(new FormConfiguration());
         modelBuilder.ApplyConfiguration(new QuestionConfiguration());
         modelBuilder.ApplyConfiguration(new CategoriesConfiguration());
-        modelBuilder.ApplyConfiguration(new MentorConfiguration());
         modelBuilder.ApplyConfiguration(new MentorCategoryConfiguration());
         modelBuilder.ApplyConfiguration(new MentorFormConfiguration());
         modelBuilder.ApplyConfiguration(new FormQuestionConfiguration());
@@ -43,7 +42,6 @@ public class PostgresContext : DbContext
     public DbSet<User> User => Set<User>();
     public DbSet<UserToken> UserTokens => Set<UserToken>();
 
-    public DbSet<Mentor> Mentors => Set<Mentor>();
     public DbSet<Form> Form => Set<Form>();
 
     public DbSet<Categories> Categories => Set<Categories>();   

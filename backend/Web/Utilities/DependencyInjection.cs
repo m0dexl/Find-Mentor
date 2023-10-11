@@ -22,7 +22,6 @@ public static class DependencyInjection
         serviceCollection.AddScoped<IFormService, FormService>();
         serviceCollection.AddScoped<IMentorCategoryService, MentorCategoryService>();
         serviceCollection.AddScoped<IMentorFormService, MentorFormService>();
-        serviceCollection.AddScoped<IMentorService, MentorService>();
         serviceCollection.AddScoped<IQuestionsService, QuestionsService>();
         serviceCollection.AddScoped<IUserService, UserService>();
         serviceCollection.AddScoped<IFormQuestionService, FormQuestionService>();

@@ -17,5 +17,9 @@ namespace Business.Models.Request.Update
 
         public UserType UserType { get; set; }
 
+        public string Mentor_Description { get; set; } = default!;
+
+        public MentorStatus Availability { get; set; } = MentorStatus.Available;
+
     }
 }

@@ -20,13 +20,15 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.PasswordSalt).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.IsDeleted).IsRequired();
+        builder.Property(x => x.Mentor_Description).IsRequired();
+        builder.Property(x => x.Availability).IsRequired();
 
         //builder.HasOne(x => x.Mentor).WithOne(x => x.User).HasForeignKey<User>(x => x.Mentor_Id);
         // yeni cikardim 24/09 cunku kalitimla cozdum birebir iliskiye gerek kalmadi
 
-        builder.HasOne(x => x.Mentor)
-                .WithOne(x => x.User)
-                .HasForeignKey<User>(x => x.Id);
+        //builder.HasOne(x => x.Mentor)
+        //        .WithOne(x => x.User)
+        //        .HasForeignKey<User>(x => x.Id);
 
         using (var hmac = new System.Security.Cryptography.HMACSHA512())
         {
@@ -47,7 +49,9 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
              PasswordHash = passwordHash,
             UserType = UserType.Admin,
              CreatedAt = DateTime.UtcNow.ToTimeZone(),
-            IsDeleted = false
+            IsDeleted = false,
+             Mentor_Description = "mentorum mentorrr",
+            Availability = MentorStatus.Available
          }
             };
             builder.HasData(data);

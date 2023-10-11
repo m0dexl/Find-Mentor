@@ -14,7 +14,6 @@ public interface IUnitOfWork : IDisposable
     IMentorCategoriesRepository MentorCategories { get; }
 
     IFormQuestionRepository FormQuestion { get; }
-    IMentorRepository Mentor { get; }
     IQuestionsRepository Questions { get; }
 
     Task<int> CommitAsync();

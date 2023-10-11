@@ -17,7 +17,6 @@ public class UnitOfWork : IUnitOfWork
     private MentorFormRepository? _mentorFormRepository;
     private CategoriesRepository? _categoriesRepository;
     private MentorCategoryRepository? _mentorCategoryRepository;
-    private MentorRepository? _mentorRepository;
     private QuestionsRepository? _questionsRepository;
     private FormQuestionRepository? _formQuestionRepository;
 
@@ -32,7 +31,6 @@ public class UnitOfWork : IUnitOfWork
 
     public IMentorCategoriesRepository MentorCategories => _mentorCategoryRepository ??= new MentorCategoryRepository(_postgresContext);
 
-    public IMentorRepository Mentor => _mentorRepository ??= new MentorRepository(_postgresContext);
     public IQuestionsRepository Questions => _questionsRepository ??= new QuestionsRepository(_postgresContext);
     public IFormQuestionRepository FormQuestion => _formQuestionRepository ??= new FormQuestionRepository(_postgresContext);
 

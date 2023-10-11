@@ -10,9 +10,9 @@ namespace Infrastructure.Data.Postgres.Entities
     public class MentorCategory : Entity<int>
     {
         public int MentorId { get; set; }
-        public Mentor Mentor { get; set; }
+        public User Mentor { get; set; }
 
         public int CategoryId { get; set; }
-        public virtual Categories Categories { get; set; }
+        public Categories Categories { get; set; }
     }
 }

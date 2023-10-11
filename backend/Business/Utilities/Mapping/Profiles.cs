@@ -16,10 +16,6 @@ public class Profiles : AutoMapper.Profile
         CreateMap<UserUpdateDto, User>().ReverseMap();
         CreateMap<User, Models.Response.UserProfileDto>().ReverseMap(); //kullanıcı görüntüleme
 
-        CreateMap<MentorCreateDto, Mentor>().ReverseMap();
-        CreateMap<MentorUpdateDto, Mentor>().ReverseMap();
-        CreateMap<Mentor, MentorInfoDto>().ReverseMap();
-
 
         CreateMap<CategoriesCreateDto, Categories>().ReverseMap();
         CreateMap<CategoriesUpdateDto, Categories>().ReverseMap();
@@ -30,8 +26,8 @@ public class Profiles : AutoMapper.Profile
         CreateMap<MentorCategory, MentorCategoryInfoDto>().ReverseMap();
 
 
-        CreateMap<MentorFormCreateDto, Mentor>().ReverseMap();
-        CreateMap<MentorFormUpdateDto, Mentor>().ReverseMap();
+        CreateMap<MentorFormCreateDto, MentorForm>().ReverseMap();
+        CreateMap<MentorFormUpdateDto, MentorForm>().ReverseMap();
         CreateMap<MentorForm, MentorFormInfoDto>().ReverseMap();
 
         CreateMap<FormCreateDto,Form>().ReverseMap();
