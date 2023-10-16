@@ -8,9 +8,9 @@ using Web.Controllers.Base;
 
 namespace Web.Controllers
 {
-    public class UserController : BaseCRUDController<User,int,UserCreateDto,UserUpdateDto,UserProfileDto>
+    public class NoticeFormAnswerController : BaseCRUDController<NoticeFormAnswer,int,NoticeFormAnswerCreateDto,NoticeFormAnswerUpdateDto,NoticeFormAnswerInfoDto>
     {
-        public UserController(IUserService service) : base(service)
+        public NoticeFormAnswerController(INoticeFormAnswerService service) : base(service)
         {
         }
     }

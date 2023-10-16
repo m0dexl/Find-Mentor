@@ -13,12 +13,9 @@ public class UnitOfWork : IUnitOfWork
 
     private UserRepository? _userRepository;
     private UserTokenRepository? _userTokenRepository;
-    private FormRepository? _formRepository;
-    private MentorFormRepository? _mentorFormRepository;
-    private CategoriesRepository? _categoriesRepository;
-    private MentorCategoryRepository? _mentorCategoryRepository;
-    private QuestionsRepository? _questionsRepository;
-    private FormQuestionRepository? _formQuestionRepository;
+    private CategoryRepository? _categoryRepository;
+    private NoticeFormAnswerRepository? _noticeFormAnswerRepository;
+    private NoticeRepository? _noticeRepository;
 
     public UnitOfWork(PostgresContext postgresContext)
     {
@@ -27,17 +24,9 @@ public class UnitOfWork : IUnitOfWork
 
     public IUserRepository Users => _userRepository ??= new UserRepository(_postgresContext);
     public IUserTokenRepository UserTokens => _userTokenRepository ??= new UserTokenRepository(_postgresContext);
-    public ICategoriesRepository Categories => _categoriesRepository ??= new CategoriesRepository(_postgresContext);
-
-    public IMentorCategoriesRepository MentorCategories => _mentorCategoryRepository ??= new MentorCategoryRepository(_postgresContext);
-
-    public IQuestionsRepository Questions => _questionsRepository ??= new QuestionsRepository(_postgresContext);
-    public IFormQuestionRepository FormQuestion => _formQuestionRepository ??= new FormQuestionRepository(_postgresContext);
-
-
-    public IFormRepository Forms => _formRepository ??= new FormRepository(_postgresContext);
-    public IMentorFormRepository MentorForms => _mentorFormRepository ??= new MentorFormRepository(_postgresContext);
-
+    public ICategoryRepository Categories => _categoryRepository ??= new CategoryRepository(_postgresContext);
+    public INoticeRepository Notices => _noticeRepository ??= new NoticeRepository(_postgresContext);
+    public INoticeFormAnswerRepository NoticeFormAnswers => _noticeFormAnswerRepository ??= new NoticeFormAnswerRepository(_postgresContext);
 
     public async Task<int> CommitAsync()
     {

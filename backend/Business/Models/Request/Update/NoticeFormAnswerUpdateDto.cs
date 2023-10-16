@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Models.Request.Create
+namespace Business.Models.Request.Update
 {
-    public class UserCreateDto
+    public class NoticeFormAnswerUpdateDto
     {
     }
 }

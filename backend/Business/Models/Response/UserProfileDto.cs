@@ -10,12 +10,7 @@ public class UserProfileDto
     public string Email { get; set; } = default!;
     public UserType UserType { get; set; } = default!;
 
-    public string Mentor_Description { get; set; } = default!;
-
-    public MentorStatus Availability { get; set; } = default!;
-
-    public MentorCategoryInfoDto CategoriesForMentor { get; set; }
-
-    public MentorFormInfoDto FormsForMentor { get; set; }
+    public Notice Notice { get; set; } = default!;
+    public ICollection<NoticeFormAnswer> NoticeFormAnswers { get; set; } = default!;
 
 }

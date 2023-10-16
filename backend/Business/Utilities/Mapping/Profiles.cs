@@ -12,40 +12,18 @@ public class Profiles : AutoMapper.Profile
     public Profiles()
     {
         CreateMap<RegisterDto, User>().ReverseMap();
-        CreateMap<User, UserProfileDto>().ReverseMap();
         CreateMap<UserUpdateDto, User>().ReverseMap();
-        CreateMap<User, Models.Response.UserProfileDto>().ReverseMap(); //kullanıcı görüntüleme
+        CreateMap<User, UserProfileDto>().ReverseMap(); //kullanıcı görüntüleme
 
+        CreateMap<CategoryCreateDto, Category>().ReverseMap();
+        CreateMap<CategoryUpdateDto, Category>().ReverseMap();
+        CreateMap<Category, CategoryInfoDto>().ReverseMap();
 
-        CreateMap<CategoriesCreateDto, Categories>().ReverseMap();
-        CreateMap<CategoriesUpdateDto, Categories>().ReverseMap();
-        CreateMap<Categories, CategoriesInfoDto>().ReverseMap();
+        CreateMap<NoticeCreateDto, Notice>().ReverseMap();
+        CreateMap<NoticeUpdateDto, Notice>().ReverseMap();
+        CreateMap<Notice, NoticeInfoDto>().ReverseMap();
 
-        CreateMap<MentorCategoryCreateDto, MentorCategory>().ReverseMap();
-        CreateMap<MentorCategoryUpdateDto, MentorCategory>().ReverseMap();
-        CreateMap<MentorCategory, MentorCategoryInfoDto>().ReverseMap();
-
-
-        CreateMap<MentorFormCreateDto, MentorForm>().ReverseMap();
-        CreateMap<MentorFormUpdateDto, MentorForm>().ReverseMap();
-        CreateMap<MentorForm, MentorFormInfoDto>().ReverseMap();
-
-        CreateMap<FormCreateDto,Form>().ReverseMap();
-        CreateMap<FormUpdateDto, Form>().ReverseMap();
-        CreateMap<Form, FormInfoDto>().ReverseMap();
-
-        CreateMap<FormQuestionCreateDto,FormQuestion>().ReverseMap();
-        CreateMap<FormQuestionUpdateDto, FormQuestion>().ReverseMap();
-        CreateMap<FormQuestion, FormQuestionInfoDto>().ReverseMap();
-
-        CreateMap<QuestionsCreateDto,Questions>().ReverseMap();
-        CreateMap<QuestionsUpdateDto,Questions>().ReverseMap();
-        CreateMap<Questions,QuestionsInfoDto>().ReverseMap();
-
-
-
-
-
-
+        CreateMap<NoticeFormAnswerCreateDto,NoticeFormAnswer >().ReverseMap();
+        CreateMap<NoticeFormAnswer, NoticeFormAnswerInfoDto>().ReverseMap();
     }
 }

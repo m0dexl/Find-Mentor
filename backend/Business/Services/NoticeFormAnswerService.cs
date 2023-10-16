@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace Business.Services
 {
-    public class UserService : BaseService<User, int, UserProfileDto>, IUserService
+    public class NoticeFormAnswerService : BaseService<NoticeFormAnswer, int, NoticeFormAnswerInfoDto>, INoticeFormAnswerService
     {
-        public UserService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) : base(unitOfWork, unitOfWork.Users, mapperHelper)
+        public NoticeFormAnswerService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) : base(unitOfWork, unitOfWork.NoticeFormAnswers, mapperHelper)
         {
 
         }

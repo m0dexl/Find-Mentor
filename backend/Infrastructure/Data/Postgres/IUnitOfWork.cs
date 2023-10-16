@@ -6,15 +6,10 @@ public interface IUnitOfWork : IDisposable
 {
     IUserRepository Users { get; }
     IUserTokenRepository UserTokens { get; }
-    IFormRepository Forms { get; }
-    IMentorFormRepository MentorForms { get; }
+    ICategoryRepository Categories { get; }
+    INoticeFormAnswerRepository NoticeFormAnswers { get; }
+    INoticeRepository Notices { get; }
 
-    ICategoriesRepository Categories { get; }
-
-    IMentorCategoriesRepository MentorCategories { get; }
-
-    IFormQuestionRepository FormQuestion { get; }
-    IQuestionsRepository Questions { get; }
 
     Task<int> CommitAsync();
 }

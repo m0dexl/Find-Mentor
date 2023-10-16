@@ -15,11 +15,5 @@ namespace Business.Models.Request.Update
         public string UserName { get; set; } = default!;
         public string FullName { get; set; } = default!;
 
-        public UserType UserType { get; set; }
-
-        public string Mentor_Description { get; set; } = default!;
-
-        public MentorStatus Availability { get; set; } = MentorStatus.Available;
-
     }
 }

@@ -20,12 +20,9 @@ public class PostgresContext : DbContext
         
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new UserTokenConfiguration());
-        modelBuilder.ApplyConfiguration(new FormConfiguration());
-        modelBuilder.ApplyConfiguration(new QuestionConfiguration());
-        modelBuilder.ApplyConfiguration(new CategoriesConfiguration());
-        modelBuilder.ApplyConfiguration(new MentorCategoryConfiguration());
-        modelBuilder.ApplyConfiguration(new MentorFormConfiguration());
-        modelBuilder.ApplyConfiguration(new FormQuestionConfiguration());
+        modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+        modelBuilder.ApplyConfiguration(new NoticeConfiguration());
+        modelBuilder.ApplyConfiguration(new NoticeFormAnswerConfiguration());
 
     }
 
@@ -39,16 +36,10 @@ public class PostgresContext : DbContext
         }
     }
 
-    public DbSet<User> User => Set<User>();
+    public DbSet<User> Users => Set<User>();
     public DbSet<UserToken> UserTokens => Set<UserToken>();
+    public DbSet<Category> Categories => Set<Category>();
+    public DbSet<Notice> Notices => Set<Notice>();   
+    public DbSet<NoticeFormAnswer> NoticeFormAnswers => Set<NoticeFormAnswer>();
 
-    public DbSet<Form> Form => Set<Form>();
-
-    public DbSet<Categories> Categories => Set<Categories>();   
-    public DbSet<Questions> Questions => Set<Questions>();
-
-    public DbSet<MentorCategory> MentorCategory => Set<MentorCategory>();
-    public DbSet<FormQuestion> FormQuestion => Set<FormQuestion>();
-    public DbSet<MentorForm> MentorForm => Set<MentorForm>();
- 
 }

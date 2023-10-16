@@ -20,43 +20,33 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.PasswordSalt).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.IsDeleted).IsRequired();
-        builder.Property(x => x.Mentor_Description).IsRequired();
-        builder.Property(x => x.Availability).IsRequired();
-
-        //builder.HasOne(x => x.Mentor).WithOne(x => x.User).HasForeignKey<User>(x => x.Mentor_Id);
-        // yeni cikardim 24/09 cunku kalitimla cozdum birebir iliskiye gerek kalmadi
-
-        //builder.HasOne(x => x.Mentor)
-        //        .WithOne(x => x.User)
-        //        .HasForeignKey<User>(x => x.Id);
-
-        using (var hmac = new System.Security.Cryptography.HMACSHA512())
-        {
-            var passwordSalt = hmac.Key;
-            var passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("123123123"));
 
 
+        builder.HasOne(u => u.Notice)
+            .WithOne(n => n.User)
+            .HasForeignKey<Notice>(n => n.Mentor_Id);
+        
+        //using (var hmac = new System.Security.Cryptography.HMACSHA512())
+        //{
+        //    var passwordSalt = hmac.Key;
+        //    var passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("123123123"));
 
-            var data = new object[]
-            {
-            new {
-            Id = 8,
-             Email = "seyit@reateacher.com",
-            UserName = "seyitadmin",
-            FirstName = "Seyit",
-             FullName = "Seyit Camcı",         
-            PasswordSalt = passwordSalt,
-             PasswordHash = passwordHash,
-            UserType = UserType.Admin,
-             CreatedAt = DateTime.UtcNow.ToTimeZone(),
-            IsDeleted = false,
-             Mentor_Description = "mentorum mentorrr",
-            Availability = MentorStatus.Available
-         }
-            };
-            builder.HasData(data);
-
-        }
-
+        //    var data = new object[]
+        //    {
+        //    new {
+        //    Id = 0,
+        //     Email = "seyit@reateacher.com",
+        //    UserName = "seyitadmin",
+        //    FirstName = "Seyit",
+        //     FullName = "Seyit Camcı",         
+        //    PasswordSalt = passwordSalt,
+        //     PasswordHash = passwordHash,
+        //    UserType = UserType.Admin,
+        //     CreatedAt = DateTime.UtcNow.ToTimeZone(),
+        //    IsDeleted = false,
+        //        }
+        //    };
+        //    builder.HasData(data);
+        //}
     }
 }

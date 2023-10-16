@@ -8,9 +8,9 @@ using Web.Controllers.Base;
 
 namespace Web.Controllers
 {
-    public class UserController : BaseCRUDController<User,int,UserCreateDto,UserUpdateDto,UserProfileDto>
+    public class CategoryController : BaseCRUDController<Category,int,CategoryCreateDto,CategoryUpdateDto,CategoryInfoDto>
     {
-        public UserController(IUserService service) : base(service)
+        public CategoryController(ICategoryService service) : base(service)
         {
         }
     }
