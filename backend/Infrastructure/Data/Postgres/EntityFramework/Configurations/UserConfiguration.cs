@@ -23,8 +23,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
 
         builder.HasOne(u => u.Notice)
-            .WithOne(n => n.User)
-            .HasForeignKey<Notice>(n => n.Mentor_Id);
+            .WithOne(n => n.MentorUser)
+            .HasForeignKey<Notice>(n => n.MentorUser_Id);
         
         //using (var hmac = new System.Security.Cryptography.HMACSHA512())
         //{

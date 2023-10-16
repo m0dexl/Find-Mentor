@@ -8,12 +8,14 @@ namespace Business.Models.Request.Create
 {
     public class NoticeFormAnswerCreateDto
     {
-        public string Answer_Name { get; set; }
-        public string Answer_Surname { get; set; }
-        public string Answer_Email { get; set; }
-        public int Answer_Phone { get; set; }
-        public string Answer_AboutYourself { get; set; }
-        public string Answer_YourGoal { get; set; }
-        public string Answer_ToMentor { get; set; }
+        public int MentorUser_Id { get; set; } = default!;
+        public int Notice_Id { get; set; } = default!;
+        public string Answer_Name { get; set; } = default!;
+        public string Answer_Surname { get; set; } = default!;
+        public string Answer_Email { get; set; } = default!;
+        public int Answer_Phone { get; set; } = default!;
+        public string Answer_AboutYourself { get; set; } = default!;
+        public string Answer_YourGoal { get; set; } = default!;
+        public string Answer_ToMentor { get; set; } = default!;
     }
 }

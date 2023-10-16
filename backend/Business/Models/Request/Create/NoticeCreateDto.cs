@@ -8,10 +8,10 @@ namespace Business.Models.Request.Create
 {
     public class NoticeCreateDto
     {
-        public int MentorId { get; set; } // her mentörün 1 tane ilanı olacağı için unique olmalı ?
-        public string NoticeTitle { get; set; }
-        public string NoticeDescription { get; set; }
-        public string NoticeCategoryName { get; set; }
+        public int MentorUser_Id { get; set; } = default!; // her mentörün 1 tane ilanı olacağı için unique olmalı ?
+        public string NoticeTitle { get; set; } = default!;
+        public string NoticeDescription { get; set; } = default!;
+        public string NoticeCategoryName { get; set; } = default!;
         //public string NoticeMentorPhoto { get; set; }
     }
 }

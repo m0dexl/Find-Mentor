@@ -9,7 +9,7 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class NoticeFormAnswer: Entity<int>
     {
-        public int Mentor_Id { get; set; }
+        public int MentorUser_Id { get; set; }
         public int Notice_Id { get; set; }
         public string Answer_Name {  get; set; }
         public string Answer_Surname { get; set; }
@@ -19,7 +19,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public string Answer_YourGoal { get; set; }
         public string Answer_ToMentor { get; set; }
 
-        public User User { get; set; }
+        public User MentorUser { get; set; }
         public Notice Notice { get; set; }
     }
 }

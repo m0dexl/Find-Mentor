@@ -17,8 +17,8 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
             builder.HasKey(c => c.Id);
 
-            builder.Property(n => n.Mentor_Id).IsRequired();
-            builder.HasIndex(n => n.Mentor_Id).IsUnique();
+            builder.Property(n => n.MentorUser_Id).IsRequired();
+            builder.HasIndex(n => n.MentorUser_Id).IsUnique();
             builder.Property(n => n.NoticeTitle).IsRequired();
             builder.HasIndex(n => n.NoticeTitle).IsUnique();
             builder.Property(n => n.NoticeDescription).IsRequired();

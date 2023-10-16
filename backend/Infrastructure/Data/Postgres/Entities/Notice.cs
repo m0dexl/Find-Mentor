@@ -15,11 +15,11 @@ namespace Infrastructure.Data.Postgres.Entities
         //public string NoticeMentorPhoto { get; set; }
 
          //1'e 1 ilişkide ekstradan foreign key kolonuna ihtiyaç olmayacağından dolayı dependent entity'deki id kolonunun hem foreign key hem de primary key olarak kullanmayı tercih ediyoruz ve bu duruma özen gösterilidir diyoruz.
-         public int Mentor_Id { get; set; }
+         public int MentorUser_Id { get; set; }
         //her mentörün 1 tane ilanı olacağı için unique olmalı ?
 
 
-        public User User { get; set; }
+        public User MentorUser { get; set; }
         public ICollection<NoticeFormAnswer> NoticeFormAnswers { get; set; }
     }
 }
