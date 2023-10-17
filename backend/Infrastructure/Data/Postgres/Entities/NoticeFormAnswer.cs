@@ -1,6 +1,7 @@
 ﻿using Infrastructure.Data.Postgres.Entities.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public string Answer_Name {  get; set; }
         public string Answer_Surname { get; set; }
         public string Answer_Email { get; set; }
-        public int Answer_Phone { get; set; }
+        public string Answer_Phone { get; set; }
         public string Answer_AboutYourself { get; set; }
         public string Answer_YourGoal { get; set; }
         public string Answer_ToMentor { get; set; }
