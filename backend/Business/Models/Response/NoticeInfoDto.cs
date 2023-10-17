@@ -14,8 +14,8 @@ namespace Business.Models.Response
         public string NoticeDescription { get; set; } = default!;
         public string NoticeCategoryName { get; set; } = default!;
         //public string NoticeMentorPhoto { get; set; } = default!;
-        public UserProfileDto User { get; set;} = default!;
-        public ICollection<NoticeFormAnswerInfoDto> NoticeFormAnswers { get; set; } = default!;
+        //public UserProfileDto User { get; set;} = default!;
+        //public ICollection<NoticeFormAnswerInfoDto> NoticeFormAnswers { get; set; } = default!;
     
     }
 }

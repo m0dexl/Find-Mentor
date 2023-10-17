@@ -8,7 +8,7 @@ namespace Business.Models.Request.Create
 {
     public class NoticeFormAnswerCreateDto
     {
-        public int MentorUser_Id { get; set; } = default!;
+        //public int MentorUser_Id { get; set; } = default!;
         public int Notice_Id { get; set; } = default!;
         public string Answer_Name { get; set; } = default!;
         public string Answer_Surname { get; set; } = default!;

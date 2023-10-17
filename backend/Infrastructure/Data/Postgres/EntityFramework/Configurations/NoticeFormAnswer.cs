@@ -28,9 +28,9 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             builder.Property(n => n.Answer_ToMentor).IsRequired();
 
 
-            builder.HasOne(nfa => nfa.MentorUser)
-                .WithMany(u => u.NoticeFormAnswers)
-                .HasForeignKey(nfa => nfa.MentorUser_Id);
+            //builder.HasOne(nfa => nfa.MentorUser)
+            //    .WithMany(u => u.NoticeFormAnswers)
+            //    .HasForeignKey(nfa => nfa.MentorUser_Id);
 
             builder.HasOne(nfa => nfa.Notice)
                 .WithMany(n => n.NoticeFormAnswers)

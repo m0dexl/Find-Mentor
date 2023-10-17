@@ -10,7 +10,7 @@ public class UserProfileDto
     public string Email { get; set; } = default!;
     public UserType UserType { get; set; } = default!;
 
-    public Notice Notice { get; set; } = default!;
-    public ICollection<NoticeFormAnswer> NoticeFormAnswers { get; set; } = default!;
+    //public NoticeInfoDto Notice { get; set; } = default!;
+    //public ICollection<NoticeFormAnswerInfoDto> NoticeFormAnswers { get; set; } = default!;
 
 }

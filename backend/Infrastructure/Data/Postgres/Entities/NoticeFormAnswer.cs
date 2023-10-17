@@ -19,7 +19,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public string Answer_YourGoal { get; set; }
         public string Answer_ToMentor { get; set; }
 
-        public User MentorUser { get; set; }
+        //public User MentorUser { get; set; }
         public Notice Notice { get; set; }
     }
 }
